@@ -1,0 +1,96 @@
+/* 颜色变量 */
+$theme-color: #3176de;
+$theme-input-active-color: #3176de;
+
+// 订单操作按钮样式
+$base-bg-color: #f5f5f5;
+$text-color-gray65: #656565;
+$text-color-cz: #fa8c35;
+
+/**
+ * 溢出隐藏
+ */
+@mixin textflowhidden ($lineNum: 1) {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: $lineNum;
+	-webkit-box-orient: vertical;
+}
+@mixin numflowhidden {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+/**
+ * 隐藏滚动条
+ */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 4px;
+  // display: none;
+}
+// ::-webkit-scrollbar-track {
+//   width: 6px;
+//   background: rgba(#101F1C, 0.1);
+//   -webkit-border-radius: 2em;
+//   -moz-border-radius: 2em;
+//   border-radius: 2em;
+//   // display: none;
+// }
+
+// ::-webkit-scrollbar-thumb {
+//   background-color: rgba(#101F1C, 0.5);
+//   background-clip: padding-box;
+//   min-height: 28px;
+//   -webkit-border-radius: 2em;
+//   -moz-border-radius: 2em;
+//   border-radius: 2em;
+//   // display: none;
+// }
+
+// ::-webkit-scrollbar-thumb:hover {
+//   background-color: rgba(#101F1C, 1);
+//   // display: none;
+// }
+
+/**
+ * 列表数据结束
+ */
+.isOver {
+	width: 100%;
+	line-height: 50px;
+	text-align: center;
+	font-size: 28rpx;
+	background-color: #F5F5F5;
+}
+/**
+ * 设置全局背景色
+ */
+uni-page-wrapper {
+	background-color: #F5F5F5;
+}
+
+uni-tabbar .uni-tabbar__icon {
+	margin-top: 0;
+}
+/**
+ * 清除默认样式
+ */
+uni-rich-text li {
+	list-style: none;
+}
+uni-rich-text ul {
+	padding: 0;
+}
+uni-rich-text i {
+	font-style: normal;
+}
+
+image {
+	max-width: unset;
+	min-width: unset;
+}
+view {
+	box-sizing: border-box;
+}
