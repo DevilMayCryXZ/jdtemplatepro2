@@ -12,7 +12,8 @@ export default {
 			key: "userInfo",
 			data: provider
 		})
-		console.log(state.userInfo);
+		uni.setStorageSync('hasLogin', true);
+		// console.log(state.userInfo);
 	},
 	[LOGINOUT] (state) {
 		state.hasLogin = false;
@@ -20,6 +21,7 @@ export default {
 		uni.removeStorage({
 			key: "userInfo"
 		})
+		uni.setStorageSync('hasLogin', false);
 	},
 	[REQUEST_SHOW_LOADING] (state) {
 		state.requestLoading = true;

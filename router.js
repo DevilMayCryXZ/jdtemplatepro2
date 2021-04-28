@@ -17,9 +17,8 @@ const router = createRouter({
 router.beforeEach((to, from, next) => {
 	// debugger
     if (to.meta.requireAuth) {  // 判断该路由是否需要登录权限
-        if (store.state.hasLogin) {  // 通过vuex state获取当前的token是否存在
-            console.log("是否登录：" + store.state.hasLogin)
-			next();
+        if (uni.getStorageSync('hasLogin')) {
+        	next();
         }
         else {
             next({
