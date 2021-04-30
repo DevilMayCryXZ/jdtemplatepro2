@@ -78,6 +78,18 @@
 		    }
 		    
 		},
+		{
+		    "path" : "pages/personalHome/accountSettings/personalData/personalData",
+			"meta": {
+				"requireAuth": true
+			},
+		    "style" :                                                                                    
+		    {
+		        "navigationBarTitleText": "个人资料",
+		        "enablePullDownRefresh": false
+		    }
+		    
+		},
 		// 个人中心
 		{
 		    "path": "pages/personalHome/personalHome",

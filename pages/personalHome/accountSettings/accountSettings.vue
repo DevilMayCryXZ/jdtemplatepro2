@@ -1,6 +1,6 @@
 <template>
 	<view>
-		<view class="consume-item" v-for="(item, idx) in setArr" :key="idx" @click="settingFn(item.url)">
+		<view class="consume-item" v-for="(item, idx) in setArrShow" :key="idx" @click="settingFn(item.url)">
 			{{ item.title }}
 			<view class="icon-box">
 				<FontAwesome class="setBtn" size="20" stackIndex="1" fw type="fas fa-angle-right"></FontAwesome>
@@ -25,36 +25,49 @@
 					{
 						title: "个人资料",
 						code: "datum",
-						url: "/pages/personalHome/accountSettings/personalData/personalData"
+						url: "/pages/personalHome/accountSettings/personalData/personalData",
+						show: false
 					},
 					{
 						title: "账户安全",
-						code: "safe"
+						code: "safe",
+						show: false
 					},
 					{
 						title: "工作主页",
-						code: "work"
+						code: "work",
+						show: false
 					},
 					{
 						title: "我的联系人",
 						code: "contactPerson",
-						url: "/pages/personalHome/contactPerson/contactPerson"
+						url: "/pages/personalHome/contactPerson/contactPerson",
+						show: true
 					},
 					{
 						title: "意见反馈",
-						code: "feedback"
+						code: "feedback",
+						show: false
 					},
 					{
 						title: "隐私政策",
-						code: "privacy"
+						code: "privacy",
+						show: false
 					},
 					{
 						title: "关于我们",
-						code: "us"
+						code: "us",
+						show: false
 					}
 				]
 			}
-			
+		},
+		computed: {
+			setArrShow () {
+				return this.setArr.filter( item => {
+					return item.show;
+				})
+			}
 		},
 		methods: {
 			switchFn () {
